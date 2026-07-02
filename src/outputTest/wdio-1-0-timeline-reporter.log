@@ -1,0 +1,101 @@
+{
+  "start": "2026-07-02T09:47:28.918Z",
+  "end": "2026-07-02T09:48:01.965Z",
+  "capabilities": {
+    "acceptInsecureCerts": false,
+    "browserName": "MicrosoftEdge",
+    "browserVersion": "149.0.4022.98",
+    "fedcm:accounts": true,
+    "goog:processID": 16480,
+    "ms:edgeOptions": {
+      "debuggerAddress": "localhost:62166"
+    },
+    "msedge": {
+      "msedgedriverVersion": "149.0.4022.98 (d8414318246f5132427f455636044b6f79c4e03f)",
+      "userDataDir": "/var/folders/d7/t4nv8kl17qn2k8ctvhtxxnr80000gn/T/com.microsoft.edgemac.scoped_dir.FMHVvI"
+    },
+    "networkConnectionEnabled": false,
+    "pageLoadStrategy": "normal",
+    "platformName": "mac",
+    "proxy": {},
+    "setWindowRect": true,
+    "strictFileInteractability": false,
+    "timeouts": {
+      "implicit": 0,
+      "pageLoad": 300000,
+      "script": 30000
+    },
+    "unhandledPromptBehavior": "ignore",
+    "webSocketUrl": "ws://localhost:62153/session/ef1bb0e0921989d7b92f035d9f52a942",
+    "webauthn:extension:credBlob": true,
+    "webauthn:extension:largeBlob": true,
+    "webauthn:extension:minPinLength": true,
+    "webauthn:extension:prf": true,
+    "webauthn:virtualAuthenticators": true,
+    "wdio:driverPID": 16478,
+    "sessionId": "ef1bb0e0921989d7b92f035d9f52a942"
+  },
+  "host": "localhost",
+  "port": 62153,
+  "framework": "mocha",
+  "mochaOpts": {
+    "timeout": 60000,
+    "ui": "bdd"
+  },
+  "duration": 33047,
+  "suites": [
+    {
+      "title": "Login with standard_user",
+      "duration": 32768,
+      "start": "2026-07-02T09:47:28.925Z",
+      "end": "2026-07-02T09:48:01.693Z",
+      "tests": [
+        {
+          "title": "Login with standard_user",
+          "start": "2026-07-02T09:47:28.925Z",
+          "end": "2026-07-02T09:47:40.366Z",
+          "duration": 11441,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "Add \"Sauce Labs Backpack\" to the cart",
+          "start": "2026-07-02T09:47:40.369Z",
+          "end": "2026-07-02T09:48:01.692Z",
+          "duration": 21323,
+          "state": "failed",
+          "screenshots": [],
+          "error": {
+            "type": "Error",
+            "message": "Can't call click on element with selector \"button#add-to-cart-Sauce Labs Backpack\" because element wasn't found",
+            "stack": "Error: Can't call click on element with selector \"button#add-to-cart-Sauce Labs Backpack\" because element wasn't found\n    at async Context.<anonymous> (/Users/marcelchirau/epam-task/src/test/task.test.js:27:5)"
+          }
+        }
+      ],
+      "hooks": [
+        {
+          "start": "2026-07-02T09:47:28.926Z",
+          "end": "2026-07-02T09:47:31.653Z",
+          "duration": 2727,
+          "title": "\"before each\" hook for Login with standard_user",
+          "associatedSuite": "Login with standard_user"
+        },
+        {
+          "start": "2026-07-02T09:47:40.370Z",
+          "end": "2026-07-02T09:47:42.247Z",
+          "duration": 1877,
+          "title": "\"before each\" hook for Login with standard_user",
+          "associatedSuite": "Login with standard_user"
+        }
+      ]
+    }
+  ],
+  "specs": [
+    "file:///Users/marcelchirau/epam-task/src/test/task.test.js"
+  ],
+  "state": {
+    "passed": 1,
+    "failed": 1,
+    "skipped": 0
+  }
+}

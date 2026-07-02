@@ -1,0 +1,198 @@
+{
+  "start": "2026-07-02T14:01:24.761Z",
+  "end": "2026-07-02T14:04:21.422Z",
+  "capabilities": {
+    "acceptInsecureCerts": false,
+    "browserName": "chrome",
+    "browserVersion": "149.0.7827.201",
+    "chrome": {
+      "chromedriverVersion": "149.0.7827.201 (6a7b3dbec3b2ca25877c2553b5473b2f277ef644-refs/branch-heads/7827_196@{#6})",
+      "userDataDir": "/var/folders/d7/t4nv8kl17qn2k8ctvhtxxnr80000gn/T/org.chromium.Chromium.scoped_dir.8QXgY9"
+    },
+    "fedcm:accounts": true,
+    "goog:chromeOptions": {
+      "debuggerAddress": "localhost:63514"
+    },
+    "goog:processID": 8559,
+    "networkConnectionEnabled": false,
+    "pageLoadStrategy": "normal",
+    "platformName": "mac",
+    "proxy": {},
+    "setWindowRect": true,
+    "strictFileInteractability": false,
+    "timeouts": {
+      "implicit": 0,
+      "pageLoad": 300000,
+      "script": 30000
+    },
+    "unhandledPromptBehavior": "ignore",
+    "webSocketUrl": "ws://localhost:63501/session/fcde0a0c7f99b3bec74ebe7d0516d3c8",
+    "webauthn:extension:credBlob": true,
+    "webauthn:extension:largeBlob": true,
+    "webauthn:extension:minPinLength": true,
+    "webauthn:extension:prf": true,
+    "webauthn:virtualAuthenticators": true,
+    "wdio:driverPID": 8557,
+    "sessionId": "fcde0a0c7f99b3bec74ebe7d0516d3c8"
+  },
+  "host": "localhost",
+  "port": 63501,
+  "framework": "mocha",
+  "mochaOpts": {
+    "timeout": 60000,
+    "ui": "bdd"
+  },
+  "duration": 176661,
+  "suites": [
+    {
+      "title": "Login with standard_user",
+      "duration": 176338,
+      "start": "2026-07-02T14:01:24.774Z",
+      "end": "2026-07-02T14:04:21.112Z",
+      "tests": [
+        {
+          "title": "Login with standard_user",
+          "start": "2026-07-02T14:01:24.775Z",
+          "end": "2026-07-02T14:01:46.779Z",
+          "duration": 22004,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "Add \"Sauce Labs Backpack\" to the cart",
+          "start": "2026-07-02T14:01:52.612Z",
+          "end": "2026-07-02T14:02:07.537Z",
+          "duration": 14925,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "Navigate to Cart and validate the item is present.",
+          "start": "2026-07-02T14:02:13.219Z",
+          "end": "2026-07-02T14:02:27.152Z",
+          "duration": 13933,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "Proceed to Checkout",
+          "start": "2026-07-02T14:02:31.722Z",
+          "end": "2026-07-02T14:02:47.762Z",
+          "duration": 16040,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "Fill in the Information form(First Name,Last Name,Zip)",
+          "start": "2026-07-02T14:02:54.079Z",
+          "end": "2026-07-02T14:03:31.915Z",
+          "duration": 37836,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "Complete the checkout and validate the success message:\"Thank you for your order!\"",
+          "start": "2026-07-02T14:03:36.241Z",
+          "end": "2026-07-02T14:04:15.320Z",
+          "duration": 39079,
+          "state": "passed",
+          "screenshots": []
+        }
+      ],
+      "hooks": [
+        {
+          "start": "2026-07-02T14:01:24.775Z",
+          "end": "2026-07-02T14:01:32.856Z",
+          "duration": 8081,
+          "title": "\"before each\" hook for Login with standard_user",
+          "associatedSuite": "Login with standard_user"
+        },
+        {
+          "start": "2026-07-02T14:01:46.780Z",
+          "end": "2026-07-02T14:01:52.612Z",
+          "duration": 5832,
+          "title": "\"after each\" hook for Login with standard_user",
+          "associatedSuite": "Login with standard_user"
+        },
+        {
+          "start": "2026-07-02T14:01:52.613Z",
+          "end": "2026-07-02T14:01:57.425Z",
+          "duration": 4812,
+          "title": "\"before each\" hook for Login with standard_user",
+          "associatedSuite": "Login with standard_user"
+        },
+        {
+          "start": "2026-07-02T14:02:07.538Z",
+          "end": "2026-07-02T14:02:13.219Z",
+          "duration": 5681,
+          "title": "\"after each\" hook for Login with standard_user",
+          "associatedSuite": "Login with standard_user"
+        },
+        {
+          "start": "2026-07-02T14:02:13.219Z",
+          "end": "2026-07-02T14:02:18.279Z",
+          "duration": 5060,
+          "title": "\"before each\" hook for Login with standard_user",
+          "associatedSuite": "Login with standard_user"
+        },
+        {
+          "start": "2026-07-02T14:02:27.153Z",
+          "end": "2026-07-02T14:02:31.722Z",
+          "duration": 4569,
+          "title": "\"after each\" hook for Login with standard_user",
+          "associatedSuite": "Login with standard_user"
+        },
+        {
+          "start": "2026-07-02T14:02:31.723Z",
+          "end": "2026-07-02T14:02:33.477Z",
+          "duration": 1754,
+          "title": "\"before each\" hook for Login with standard_user",
+          "associatedSuite": "Login with standard_user"
+        },
+        {
+          "start": "2026-07-02T14:02:47.768Z",
+          "end": "2026-07-02T14:02:54.079Z",
+          "duration": 6311,
+          "title": "\"after each\" hook for Login with standard_user",
+          "associatedSuite": "Login with standard_user"
+        },
+        {
+          "start": "2026-07-02T14:02:54.079Z",
+          "end": "2026-07-02T14:02:56.549Z",
+          "duration": 2470,
+          "title": "\"before each\" hook for Login with standard_user",
+          "associatedSuite": "Login with standard_user"
+        },
+        {
+          "start": "2026-07-02T14:03:31.915Z",
+          "end": "2026-07-02T14:03:36.241Z",
+          "duration": 4326,
+          "title": "\"after each\" hook for Login with standard_user",
+          "associatedSuite": "Login with standard_user"
+        },
+        {
+          "start": "2026-07-02T14:03:36.241Z",
+          "end": "2026-07-02T14:03:38.046Z",
+          "duration": 1805,
+          "title": "\"before each\" hook for Login with standard_user",
+          "associatedSuite": "Login with standard_user"
+        },
+        {
+          "start": "2026-07-02T14:04:15.320Z",
+          "end": "2026-07-02T14:04:21.110Z",
+          "duration": 5790,
+          "title": "\"after each\" hook for Login with standard_user",
+          "associatedSuite": "Login with standard_user"
+        }
+      ]
+    }
+  ],
+  "specs": [
+    "file:///Users/marcelchirau/epam-task/src/test/task.test.js"
+  ],
+  "state": {
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0
+  }
+}
