@@ -7,17 +7,17 @@ class FillForm extends BaseComponent{
     }
 
     get firstName(){
-        return this.rootEl.$(' .checkout_info .form_group input#first-name')
+        return this.rootEl.$('.checkout_info .form_group input#first-name')
         }
         get lastName(){
-        return this.rootEl.$(' .checkout_info .form_group input#last-name')
+        return this.rootEl.$('.checkout_info .form_group input#last-name')
         }
         get zip(){
-            return this.rootEl.$(' .checkout_info .form_group input#postal-code')
+            return this.rootEl.$('.checkout_info .form_group input#postal-code')
         
         }
         get continueBtn(){
-            return this.rootEl.$(' .checkout_buttons input#continue')
+            return this.rootEl.$('.checkout_buttons input#continue')
         }
        
 

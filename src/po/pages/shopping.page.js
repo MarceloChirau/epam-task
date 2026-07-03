@@ -27,6 +27,7 @@ async productToExistInCart(product){
             return item;
         }
     }
+throw new Error(`${product} is not found in cart`)
 }
 }
 

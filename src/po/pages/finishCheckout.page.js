@@ -5,7 +5,7 @@ class FinishCheckout extends BaseComponent{
         super('div.cart_footer')
     }
     get finishBtn(){
-        return this.rootEl.$(' button#finish');
+        return this.rootEl.$('button#finish');
     }
 }
 
