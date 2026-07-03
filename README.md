@@ -14,7 +14,7 @@ Then proceeds to checkout, fills in the info form like first name, last name and
 > Proceed to Checkout.  
 > Fill in the Information from (First name, Last Name, Zip).  
 > Complete the checkout and validate the success message:"Thank you for your order!".
-* **UC-2 Data Driven Login**:
+* **UC-2 Data Driven Login**:  
 Use a Data Provider to test login with:
    1. standard_user (Should pass).
    2. locked_out_user (Should fail with specific error message).
