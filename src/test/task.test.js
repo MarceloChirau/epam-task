@@ -17,6 +17,7 @@ describe('End-to-end flow',()=>{
 it('completes happy path from login to success message',async()=>{
     //launch url
     await browser.url('https://www.saucedemo.com');
+
     //log in with standard_user and secret_sauce password
     await loginComponent.username.setValue('standard_user');
     await loginComponent.password.setValue('secret_sauce');
@@ -24,12 +25,18 @@ it('completes happy path from login to success message',async()=>{
 
     //Add "Sauce Labs Backpack" to the cart
     await expect(browser).toHaveTitle('Swag Labs')
-    await shoppingPage.addProductBtn("Sauce Labs Backpack").click();
+
+
+    //for testing we will pass this product
+    const product='Sauce Labs Backpack';
+    await shoppingPage.addProductBtn(product).click();
+
+
     
     //Navigate to Cart and validate the item is present.
     await shoppingPage.shoppingCartBtn.click();
-    const product=await shoppingPage.productToExistInCart;
-    await expect(product).toHaveText("Sauce Labs Backpack");
+    const chosenProduct=await shoppingPage.productToExistInCart(product);
+    await expect(chosenProduct).toHaveText(product);
 
     //Proceed to Checkout
     await checkoutPage.checkoutBtn.click();
