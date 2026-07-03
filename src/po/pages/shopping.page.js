@@ -7,8 +7,6 @@ class ShoppingPage extends BaseComponent{
 
 addProductBtn(product){
     const replaced=product.replace(/\s/g,'-').toLowerCase();
-    // console.log('this is the selector passed: ',`button#add-to-cart-${product}.btn.btn_primary.btn_small.btn_inventory`)
-    // return $(`button${product}.btn.btn_primary.btn_small.btn_inventory`)
     return $(`button#add-to-cart-${replaced}.btn.btn_primary.btn_small.btn_inventory`)
 
 }
@@ -27,8 +25,6 @@ async productToExistInCart(product){
         const title=await item.getText();
         if(title===product){
             return item;
-        }else{
-            return `${product} doesnt exist in the cart`
         }
     }
 }
