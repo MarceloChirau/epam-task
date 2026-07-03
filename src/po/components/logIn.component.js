@@ -14,6 +14,9 @@ get password(){
 get submitBtn(){
     return this.rootEl.$('input#login-button');
 }
+get failMsg(){
+    return  this.rootEl.$('h3[data-test="error"]');
+}
 
 
 }

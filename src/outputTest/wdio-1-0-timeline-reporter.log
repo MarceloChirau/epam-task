@@ -1,18 +1,18 @@
 {
-  "start": "2026-07-02T09:47:28.918Z",
-  "end": "2026-07-02T09:48:01.965Z",
+  "start": "2026-07-03T06:59:45.123Z",
+  "end": "2026-07-03T07:00:19.556Z",
   "capabilities": {
     "acceptInsecureCerts": false,
     "browserName": "MicrosoftEdge",
     "browserVersion": "149.0.4022.98",
     "fedcm:accounts": true,
-    "goog:processID": 16480,
+    "goog:processID": 30749,
     "ms:edgeOptions": {
-      "debuggerAddress": "localhost:62166"
+      "debuggerAddress": "localhost:49562"
     },
     "msedge": {
       "msedgedriverVersion": "149.0.4022.98 (d8414318246f5132427f455636044b6f79c4e03f)",
-      "userDataDir": "/var/folders/d7/t4nv8kl17qn2k8ctvhtxxnr80000gn/T/com.microsoft.edgemac.scoped_dir.FMHVvI"
+      "userDataDir": "/var/folders/d7/t4nv8kl17qn2k8ctvhtxxnr80000gn/T/com.microsoft.edgemac.scoped_dir.lAWoC3"
     },
     "networkConnectionEnabled": false,
     "pageLoadStrategy": "normal",
@@ -26,66 +26,78 @@
       "script": 30000
     },
     "unhandledPromptBehavior": "ignore",
-    "webSocketUrl": "ws://localhost:62153/session/ef1bb0e0921989d7b92f035d9f52a942",
+    "webSocketUrl": "ws://localhost:49521/session/9a69c62831fb43271ade6aa8049dcea0",
     "webauthn:extension:credBlob": true,
     "webauthn:extension:largeBlob": true,
     "webauthn:extension:minPinLength": true,
     "webauthn:extension:prf": true,
     "webauthn:virtualAuthenticators": true,
-    "wdio:driverPID": 16478,
-    "sessionId": "ef1bb0e0921989d7b92f035d9f52a942"
+    "wdio:driverPID": 30737,
+    "sessionId": "9a69c62831fb43271ade6aa8049dcea0"
   },
   "host": "localhost",
-  "port": 62153,
+  "port": 49521,
   "framework": "mocha",
   "mochaOpts": {
     "timeout": 60000,
     "ui": "bdd"
   },
-  "duration": 33047,
+  "duration": 34433,
   "suites": [
     {
-      "title": "Login with standard_user",
-      "duration": 32768,
-      "start": "2026-07-02T09:47:28.925Z",
-      "end": "2026-07-02T09:48:01.693Z",
+      "title": "End-to-end flow",
+      "duration": 23203,
+      "start": "2026-07-03T06:59:45.130Z",
+      "end": "2026-07-03T07:00:08.333Z",
       "tests": [
         {
-          "title": "Login with standard_user",
-          "start": "2026-07-02T09:47:28.925Z",
-          "end": "2026-07-02T09:47:40.366Z",
-          "duration": 11441,
+          "title": "completes happy path from login to success message",
+          "start": "2026-07-03T06:59:45.131Z",
+          "end": "2026-07-03T07:00:08.332Z",
+          "duration": 23201,
+          "state": "passed",
+          "screenshots": []
+        }
+      ],
+      "hooks": []
+    },
+    {
+      "title": "UC-2 Data Driven Login",
+      "duration": 10807,
+      "start": "2026-07-03T07:00:08.333Z",
+      "end": "2026-07-03T07:00:19.140Z",
+      "tests": [
+        {
+          "title": "It should pass when \"standard_user\" is logged in",
+          "start": "2026-07-03T07:00:08.334Z",
+          "end": "2026-07-03T07:00:12.462Z",
+          "duration": 4128,
           "state": "passed",
           "screenshots": []
         },
         {
-          "title": "Add \"Sauce Labs Backpack\" to the cart",
-          "start": "2026-07-02T09:47:40.369Z",
-          "end": "2026-07-02T09:48:01.692Z",
-          "duration": 21323,
-          "state": "failed",
-          "screenshots": [],
-          "error": {
-            "type": "Error",
-            "message": "Can't call click on element with selector \"button#add-to-cart-Sauce Labs Backpack\" because element wasn't found",
-            "stack": "Error: Can't call click on element with selector \"button#add-to-cart-Sauce Labs Backpack\" because element wasn't found\n    at async Context.<anonymous> (/Users/marcelchirau/epam-task/src/test/task.test.js:27:5)"
-          }
+          "title": "should fail if user will try to log in with \"locked_out_user",
+          "start": "2026-07-03T07:00:12.462Z",
+          "end": "2026-07-03T07:00:19.139Z",
+          "duration": 6677,
+          "state": "passed",
+          "screenshots": []
         }
       ],
       "hooks": [
         {
-          "start": "2026-07-02T09:47:28.926Z",
-          "end": "2026-07-02T09:47:31.653Z",
-          "duration": 2727,
-          "title": "\"before each\" hook for Login with standard_user",
-          "associatedSuite": "Login with standard_user"
+          "start": "2026-07-03T07:00:08.334Z",
+          "end": "2026-07-03T07:00:08.715Z",
+          "duration": 381,
+          "title": "\"before each\" hook for UC-2 Data Driven Login",
+          "associatedSuite": "UC-2 Data Driven Login"
         },
         {
-          "start": "2026-07-02T09:47:40.370Z",
-          "end": "2026-07-02T09:47:42.247Z",
-          "duration": 1877,
-          "title": "\"before each\" hook for Login with standard_user",
-          "associatedSuite": "Login with standard_user"
+          "start": "2026-07-03T07:00:12.463Z",
+          "end": "2026-07-03T07:00:15.015Z",
+          "duration": 2552,
+          "title": "\"before each\" hook for UC-2 Data Driven Login",
+          "associatedSuite": "UC-2 Data Driven Login"
         }
       ]
     }
@@ -94,8 +106,8 @@
     "file:///Users/marcelchirau/epam-task/src/test/task.test.js"
   ],
   "state": {
-    "passed": 1,
-    "failed": 1,
+    "passed": 3,
+    "failed": 0,
     "skipped": 0
   }
 }

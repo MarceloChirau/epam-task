@@ -10,104 +10,87 @@ const SuccessPage=require('../po/pages/success.page');
 const successPage=new SuccessPage();
 
 
-describe('Login with standard_user',()=>{
+describe('End-to-end flow',()=>{
    
-beforeEach(async()=>{
-    await browser.url('https://www.saucedemo.com/')
-})
-afterEach(async()=>{
-    await browser.reloadSession();
-})
 
-it('Login with standard_user',async()=>{
+
+it('completes happy path from login to success message',async()=>{
+    //launch url
+    await browser.url('https://www.saucedemo.com');
+    //log in with standard_user and secret_sauce password
     await loginComponent.username.setValue('standard_user');
     await loginComponent.password.setValue('secret_sauce');
     await loginComponent.submitBtn.click();
-    await expect(browser).toHaveTitle('Swag Labs')
-})
 
-it('Add "Sauce Labs Backpack" to the cart',async()=>{
-    await loginComponent.username.setValue('standard_user');
-    await loginComponent.password.setValue('secret_sauce');
-    await loginComponent.submitBtn.click();
+    //Add "Sauce Labs Backpack" to the cart
     await expect(browser).toHaveTitle('Swag Labs')
-
     await shoppingPage.addProductBtn("Sauce Labs Backpack").click();
-
-   
-})
-
-
-it('Navigate to Cart and validate the item is present.',async()=>{
-
-    await loginComponent.username.setValue('standard_user');
-    await loginComponent.password.setValue('secret_sauce');
-    await loginComponent.submitBtn.click();
-    await expect(browser).toHaveTitle('Swag Labs')
-
     
-    await shoppingPage.addProductBtn("Sauce Labs Backpack").click();
-    // await browser.pause('320000')
-    await shoppingPage.shoppingCartBtn.click();
-    const product=await shoppingPage.productToExistInCart;
-    await expect(product).toHaveText("Sauce Labs Backpack")
-
-})
-it('Proceed to Checkout',async()=>{
-    await loginComponent.username.setValue('standard_user');
-    await loginComponent.password.setValue('secret_sauce');
-    await loginComponent.submitBtn.click();
-    await expect(browser).toHaveTitle('Swag Labs')
-
-    await shoppingPage.addProductBtn("Sauce Labs Backpack").click();
+    //Navigate to Cart and validate the item is present.
     await shoppingPage.shoppingCartBtn.click();
     const product=await shoppingPage.productToExistInCart;
     await expect(product).toHaveText("Sauce Labs Backpack");
 
+    //Proceed to Checkout
     await checkoutPage.checkoutBtn.click();
-})
 
-it('Fill in the Information form(First Name,Last Name,Zip)',async()=>{
-    await loginComponent.username.setValue('standard_user');
-    await loginComponent.password.setValue('secret_sauce');
-    await loginComponent.submitBtn.click();
-    await expect(browser).toHaveTitle('Swag Labs')
-
-    await shoppingPage.addProductBtn("Sauce Labs Backpack").click();
-    await shoppingPage.shoppingCartBtn.click();
-    const product=await shoppingPage.productToExistInCart;
-    await expect(product).toHaveText("Sauce Labs Backpack");
-
-    await checkoutPage.checkoutBtn.click();
+    //Fill in the Information form(First Name,Last Name,Zip
     await checkoutPage.firstName.setValue('Marcelo');
     await checkoutPage.lastName.setValue('Chirau');
     await checkoutPage.zip.setValue('44000');
-})
 
-it('Complete the checkout and validate the success message:"Thank you for your order!"',async()=>{
-    await loginComponent.username.setValue('standard_user');
-    await loginComponent.password.setValue('secret_sauce');
-    await loginComponent.submitBtn.click();
-    await expect(browser).toHaveTitle('Swag Labs')
-
-    await shoppingPage.addProductBtn("Sauce Labs Backpack").click();
-    await shoppingPage.shoppingCartBtn.click();
-    const product=await shoppingPage.productToExistInCart;
-    await expect(product).toHaveText("Sauce Labs Backpack");
-
-    await checkoutPage.checkoutBtn.click();
-    await checkoutPage.firstName.setValue('Marcelo');
-    await checkoutPage.lastName.setValue('Chirau');
-    await checkoutPage.zip.setValue('44000');
+    //Complete the checkout and validate the success message:"Thank you for your order!
     await checkoutPage.continueBtn.click();
     await checkoutPage.finishBtn.click();
-
     const successMsg=await successPage.thankYouMsg;
-
     await expect(successMsg).toHaveText("Thank you for your order!");
 
 })
+})
 
+
+
+describe('UC-2 Data Driven Login',()=>{
+    beforeEach(async()=>{
+        //launch url
+        await browser.url('https://www.saucedemo.com');
+
+    })
+
+//i create an array of objects that i will loop through it to create 
+// a data-driven pattern:
+const loginTestData=[
+    {
+        description:'It should pass when "standard_user" is logged in',
+        username:'standard_user',
+        password:'secret_sauce',
+        expectedResult:'success',
+        expectedMessage:'Swag Labs'
+    },
+    {
+        description:'should fail if user will try to log in with "locked_out_user',
+        username:'locked_out_user',
+        password:'secret_sauce',
+        expectedResult:'fail',
+        expectedMessage:'Epic sadface: Sorry, this user has been locked out.'
+    }
+]
+
+
+loginTestData.forEach(({description,username,password,expectedResult,expectedMessage})=>{
+it(description,async()=>{
+    await loginComponent.username.setValue(username);
+    await loginComponent.password.setValue(password);
+    await loginComponent.submitBtn.click();
+
+    if(expectedResult==='success'){
+        await expect(browser).toHaveTitle(expectedMessage)
+    }else{
+        const errorMsg=await loginComponent.failMsg;
+        await expect(errorMsg).toHaveText(expectedMessage);
+    }
+})
+})
 
 
 })
