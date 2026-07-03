@@ -6,9 +6,15 @@ const shoppingPage=new ShoppingPage();
 
 const CheckoutPage=require('../po/pages/checkout.page');
 const checkoutPage=new CheckoutPage();
+
 const SuccessPage=require('../po/pages/success.page');
 const successPage=new SuccessPage();
 
+const FillForm=require('../po/pages/fillForm.page')
+const fillForm=new FillForm();
+
+const FinishCheckout=require('../po/pages/finishCheckout.page');
+const finishCheckout=new FinishCheckout();
 
 describe('End-to-end flow',()=>{
    
@@ -16,7 +22,7 @@ describe('End-to-end flow',()=>{
 
 it('completes happy path from login to success message',async()=>{
     //launch url
-    await browser.url('https://www.saucedemo.com');
+    await browser.url('/');
 
     //log in with standard_user and secret_sauce password
     await loginComponent.username.setValue('standard_user');
@@ -42,13 +48,13 @@ it('completes happy path from login to success message',async()=>{
     await checkoutPage.checkoutBtn.click();
 
     //Fill in the Information form(First Name,Last Name,Zip
-    await checkoutPage.firstName.setValue('Marcelo');
-    await checkoutPage.lastName.setValue('Chirau');
-    await checkoutPage.zip.setValue('44000');
+    await fillForm.firstName.setValue('Marcelo');
+    await fillForm.lastName.setValue('Chirau');
+    await fillForm.zip.setValue('44000');
 
     //Complete the checkout and validate the success message:"Thank you for your order!
-    await checkoutPage.continueBtn.click();
-    await checkoutPage.finishBtn.click();
+    await fillForm.continueBtn.click();
+    await finishCheckout.finishBtn.click();
     const successMsg=await successPage.thankYouMsg;
     await expect(successMsg).toHaveText("Thank you for your order!");
 
@@ -60,7 +66,7 @@ it('completes happy path from login to success message',async()=>{
 describe('UC-2 Data Driven Login',()=>{
     beforeEach(async()=>{
         //launch url
-        await browser.url('https://www.saucedemo.com');
+        await browser.url('/');
 
     })
 
@@ -75,7 +81,7 @@ const loginTestData=[
         expectedMessage:'Swag Labs'
     },
     {
-        description:'should fail if user will try to log in with "locked_out_user',
+        description:'should fail if user will try to log in with "locked_out_user"',
         username:'locked_out_user',
         password:'secret_sauce',
         expectedResult:'fail',

@@ -1,18 +1,18 @@
 {
-  "start": "2026-07-03T09:48:18.166Z",
-  "end": "2026-07-03T09:48:47.620Z",
+  "start": "2026-07-03T12:19:07.870Z",
+  "end": "2026-07-03T12:19:41.716Z",
   "capabilities": {
     "acceptInsecureCerts": false,
     "browserName": "MicrosoftEdge",
     "browserVersion": "149.0.4022.98",
     "fedcm:accounts": true,
-    "goog:processID": 1150,
+    "goog:processID": 66039,
     "ms:edgeOptions": {
-      "debuggerAddress": "localhost:55575"
+      "debuggerAddress": "localhost:56762"
     },
     "msedge": {
       "msedgedriverVersion": "149.0.4022.98 (d8414318246f5132427f455636044b6f79c4e03f)",
-      "userDataDir": "/var/folders/d7/t4nv8kl17qn2k8ctvhtxxnr80000gn/T/com.microsoft.edgemac.scoped_dir.LYGQL0"
+      "userDataDir": "/var/folders/d7/t4nv8kl17qn2k8ctvhtxxnr80000gn/T/com.microsoft.edgemac.scoped_dir.p9NdPi"
     },
     "networkConnectionEnabled": false,
     "pageLoadStrategy": "normal",
@@ -26,35 +26,36 @@
       "script": 30000
     },
     "unhandledPromptBehavior": "ignore",
-    "webSocketUrl": "ws://localhost:55560/session/e4b5c0905483f3793244c3ffe8c73046",
+    "webSocketUrl": "ws://localhost:56749/session/40a1b633ae45bed603592800a2a993da",
     "webauthn:extension:credBlob": true,
     "webauthn:extension:largeBlob": true,
     "webauthn:extension:minPinLength": true,
     "webauthn:extension:prf": true,
     "webauthn:virtualAuthenticators": true,
-    "wdio:driverPID": 1141,
-    "sessionId": "e4b5c0905483f3793244c3ffe8c73046"
+    "wdio:driverPID": 66037,
+    "sessionId": "40a1b633ae45bed603592800a2a993da"
   },
   "host": "localhost",
-  "port": 55560,
+  "port": 56749,
+  "baseUrl": "https://www.saucedemo.com",
   "framework": "mocha",
   "mochaOpts": {
     "timeout": 60000,
     "ui": "bdd"
   },
-  "duration": 29454,
+  "duration": 33846,
   "suites": [
     {
       "title": "End-to-end flow",
-      "duration": 19091,
-      "start": "2026-07-03T09:48:18.171Z",
-      "end": "2026-07-03T09:48:37.262Z",
+      "duration": 22706,
+      "start": "2026-07-03T12:19:07.880Z",
+      "end": "2026-07-03T12:19:30.586Z",
       "tests": [
         {
           "title": "completes happy path from login to success message",
-          "start": "2026-07-03T09:48:18.171Z",
-          "end": "2026-07-03T09:48:37.260Z",
-          "duration": 19089,
+          "start": "2026-07-03T12:19:07.881Z",
+          "end": "2026-07-03T12:19:30.584Z",
+          "duration": 22703,
           "state": "passed",
           "screenshots": []
         }
@@ -63,39 +64,39 @@
     },
     {
       "title": "UC-2 Data Driven Login",
-      "duration": 9666,
-      "start": "2026-07-03T09:48:37.262Z",
-      "end": "2026-07-03T09:48:46.928Z",
+      "duration": 10390,
+      "start": "2026-07-03T12:19:30.586Z",
+      "end": "2026-07-03T12:19:40.976Z",
       "tests": [
         {
           "title": "It should pass when \"standard_user\" is logged in",
-          "start": "2026-07-03T09:48:37.262Z",
-          "end": "2026-07-03T09:48:41.247Z",
-          "duration": 3985,
+          "start": "2026-07-03T12:19:30.586Z",
+          "end": "2026-07-03T12:19:35.001Z",
+          "duration": 4415,
           "state": "passed",
           "screenshots": []
         },
         {
-          "title": "should fail if user will try to log in with \"locked_out_user",
-          "start": "2026-07-03T09:48:41.247Z",
-          "end": "2026-07-03T09:48:46.928Z",
-          "duration": 5681,
+          "title": "should fail if user will try to log in with \"locked_out_user\"",
+          "start": "2026-07-03T12:19:35.001Z",
+          "end": "2026-07-03T12:19:40.975Z",
+          "duration": 5974,
           "state": "passed",
           "screenshots": []
         }
       ],
       "hooks": [
         {
-          "start": "2026-07-03T09:48:37.263Z",
-          "end": "2026-07-03T09:48:37.717Z",
-          "duration": 454,
+          "start": "2026-07-03T12:19:30.587Z",
+          "end": "2026-07-03T12:19:30.991Z",
+          "duration": 404,
           "title": "\"before each\" hook for UC-2 Data Driven Login",
           "associatedSuite": "UC-2 Data Driven Login"
         },
         {
-          "start": "2026-07-03T09:48:41.247Z",
-          "end": "2026-07-03T09:48:42.969Z",
-          "duration": 1722,
+          "start": "2026-07-03T12:19:35.002Z",
+          "end": "2026-07-03T12:19:37.602Z",
+          "duration": 2600,
           "title": "\"before each\" hook for UC-2 Data Driven Login",
           "associatedSuite": "UC-2 Data Driven Login"
         }
