@@ -54,10 +54,20 @@ const {TimelineService}=require('wdio-timeline-reporter/timeline-service')
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
+        browserName: 'chrome',
+        acceptInsecureCerts:true,
+        maxInstances:5,
+        'goog:chromeOptions':{
+            args:['--headless','--window-size=1920,1080','--disable-extensions']
+        }
     },
 {
-    browserName: 'MicrosoftEdge'
+    browserName: 'MicrosoftEdge',
+    acceptInsecureCerts:true,
+    maxInstances:5,
+    'ms:edgeOptions':{
+        args:['--headless','--window-size=1920,1080']
+    }
 
 }
 ],

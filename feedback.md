@@ -1,4 +1,5 @@
--Test Automation tool - 20 (chosen the corresponding TAF, configured and set up)
+-Test Automation tool - 20 (chosen the corresponding TAF, configured and set up) ✅
+
 -Browsers - 10 (at least 2 browsers are set up into the config.js file, but there are no configurations for the browsers itself, launching mode, resolution, etc.)
 -Locators - 20 (the test-scenarios are passing, the locators are correct to be written, corresponding elements are acted, interacted and asserted)
 -Test Automation Approach - 0 (there is no bdd approach into the TAF)
@@ -13,4 +14,4 @@
 6.it's needed to add the artifacts configs for failed scenarios
 7.all comments should be either removed or be put into the appropriate place of the code
 8.bdd approach
-9.would be great to create more test scenarios
+9.would be great to create more test scenarios  
