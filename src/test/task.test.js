@@ -17,22 +17,25 @@ const FinishCheckout=require('../po/pages/finishCheckout.page');
 const finishCheckout=new FinishCheckout();
 
 describe('End-to-end flow',()=>{
-   
+     
 
 
 it('completes happy path from login to success message',async()=>{
     //launch url
-    await browser.url('/');
+    await loginComponent.open();
 
     //log in with standard_user and secret_sauce password
-    await loginComponent.username.setValue('standard_user');
-    await loginComponent.password.setValue('secret_sauce');
-    await loginComponent.submitBtn.click();
-
-    //Add "Sauce Labs Backpack" to the cart
-    await expect(browser).toHaveTitle('Swag Labs')
+    await loginComponent.login('standard_user','secret_sauce');
+    await loginComponent.clickSubmit(); 
+    
 
 
+
+    //tab to have title 'Swag Labs'
+const title=await loginComponent.getTitle();
+    await expect(title).toBe('Swag Labs');
+
+ 
     //for testing we will pass this product
     const product='Sauce Labs Backpack';
     await shoppingPage.addProductBtn(product).click();

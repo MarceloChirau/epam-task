@@ -17,7 +17,25 @@ get submitBtn(){
 get failMsg(){
     return  this.rootEl.$('h3[data-test="error"]');
 }
+  async open(){
+    await browser.url('/');
 
+  }
+
+
+
+  async login(username,password){
+await this.username.setValue(username);
+await this.password.setValue(password);
+  }
+
+  async clickSubmit(){
+await this.submitBtn.click();
+  }
+
+async getTitle(){
+     return await browser.getTitle()
+}
 
 }
 
