@@ -1,10 +1,6 @@
-const loginComponent=require('../po/components/logIn.component');
-const shoppingPage=require('../po/pages/shopping.page');
-const checkoutPage=require('../po/pages/checkout.page');
-const successPage=require('../po/pages/success.page');
-const fillForm=require('../po/pages/fillForm.page');
-const finishCheckout=require('../po/pages/finishCheckout.page');
 
+
+const{loginComponent,shoppingPage,checkoutPage,successPage,fillForm,finishCheckout}=require('../po/index')
 
 describe('End-to-end flow',()=>{
 
