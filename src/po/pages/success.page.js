@@ -11,4 +11,4 @@ class SuccessPage extends BaseComponent{
     }
 }
 
-module.exports=SuccessPage;
+module.exports=new SuccessPage();

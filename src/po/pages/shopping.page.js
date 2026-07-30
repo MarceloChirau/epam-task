@@ -24,7 +24,7 @@ async productToExistInCart(product){
     for(const item of products){
         const title=await item.getText();
         if(title===product){
-            return item;
+            return title;
         }
     }
 throw new Error(`${product} is not found in cart`)
@@ -33,6 +33,6 @@ throw new Error(`${product} is not found in cart`)
 
 
 
-module.exports=ShoppingPage;
+module.exports= new ShoppingPage();
 
 

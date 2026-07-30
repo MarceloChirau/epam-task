@@ -1,24 +1,12 @@
-const LoginComponent=require('../po/components/logIn.component');
-const loginComponent=new LoginComponent();
+const loginComponent=require('../po/components/logIn.component');
+const shoppingPage=require('../po/pages/shopping.page');
+const checkoutPage=require('../po/pages/checkout.page');
+const successPage=require('../po/pages/success.page');
+const fillForm=require('../po/pages/fillForm.page');
+const finishCheckout=require('../po/pages/finishCheckout.page');
 
-const ShoppingPage=require('../po/pages/shopping.page');
-const shoppingPage=new ShoppingPage();
-
-const CheckoutPage=require('../po/pages/checkout.page');
-const checkoutPage=new CheckoutPage();
-
-const SuccessPage=require('../po/pages/success.page');
-const successPage=new SuccessPage();
-
-const FillForm=require('../po/pages/fillForm.page')
-const fillForm=new FillForm();
-
-const FinishCheckout=require('../po/pages/finishCheckout.page');
-const finishCheckout=new FinishCheckout();
 
 describe('End-to-end flow',()=>{
-     
-
 
 it('completes happy path from login to success message',async()=>{
     //launch url
@@ -28,38 +16,35 @@ it('completes happy path from login to success message',async()=>{
     await loginComponent.login('standard_user','secret_sauce');
     await loginComponent.clickSubmit(); 
     
-
-
-
     //tab to have title 'Swag Labs'
 const title=await loginComponent.getTitle();
     await expect(title).toBe('Swag Labs');
 
- 
     //for testing we will pass this product
     const product='Sauce Labs Backpack';
+    await expect(shoppingPage.shoppingCartBtn).toBeDisplayed();
     await shoppingPage.addProductBtn(product).click();
-
 
     
     //Navigate to Cart and validate the item is present.
     await shoppingPage.shoppingCartBtn.click();
     const chosenProduct=await shoppingPage.productToExistInCart(product);
-    await expect(chosenProduct).toHaveText(product);
+    await expect(chosenProduct).toEqual(product);
 
     //Proceed to Checkout
+    await expect(checkoutPage.checkoutBtn).toBeEnabled();
     await checkoutPage.checkoutBtn.click();
 
     //Fill in the Information form(First Name,Last Name,Zip
-    await fillForm.firstName.setValue('Marcelo');
-    await fillForm.lastName.setValue('Chirau');
-    await fillForm.zip.setValue('44000');
-
+    await fillForm.fillAndContinue('Marcelo','Chirau','44000');
+ 
     //Complete the checkout and validate the success message:"Thank you for your order!
-    await fillForm.continueBtn.click();
     await finishCheckout.finishBtn.click();
+    //plus element existance
+    await expect(successPage.thankYouMsg).toExist();
     const successMsg=await successPage.thankYouMsg;
     await expect(successMsg).toHaveText("Thank you for your order!");
+
 
 })
 })

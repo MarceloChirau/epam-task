@@ -9,4 +9,4 @@ get checkoutBtn(){
 }
 
 }
-module.exports=CheckoutPage;
+module.exports= new CheckoutPage();

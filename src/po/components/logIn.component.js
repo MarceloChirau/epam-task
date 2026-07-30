@@ -39,4 +39,4 @@ async getTitle(){
 
 }
 
-module.exports=LoginComponent;
+module.exports= new LoginComponent();

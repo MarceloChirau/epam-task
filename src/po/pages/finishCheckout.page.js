@@ -9,4 +9,4 @@ class FinishCheckout extends BaseComponent{
     }
 }
 
-module.exports=FinishCheckout;
+module.exports= new FinishCheckout();
