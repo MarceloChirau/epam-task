@@ -1,8 +1,11 @@
 -Test Automation tool - 20 (chosen the corresponding TAF, configured and set up) ✅
 
--Browsers - 10 (at least 2 browsers are set up into the config.js file, but there are no configurations for the browsers itself, launching mode, resolution, etc.)
--Locators - 20 (the test-scenarios are passing, the locators are correct to be written, corresponding elements are acted, interacted and asserted)
+-Browsers - 10 (at least 2 browsers are set up into the config.js file, but there are no configurations for the browsers itself, launching mode, resolution, etc.) ✅
+
+-Locators - 20 (the test-scenarios are passing, the locators are correct to be written, corresponding elements are acted, interacted and asserted)✅
+
 -Test Automation Approach - 0 (there is no bdd approach into the TAF)
+
 -Assertions - 8 (only to have text assertion type was used, it would be great to use some other assertions into the test scenarios)
 -Overall Quality - 12
 (there are some points that could be improved across all provided TAF:
