@@ -1,16 +1,17 @@
 const {Given,When,Then} =require ('@wdio/cucumber-framework');
 
-const LoginComponent =require( '../po/components/logIn.component');
+const loginComponent =require( '../po/components/logIn.component');
+const{users,cart,fillFormUser,loginTestData}=require('../data/index');
 
-const loginComponent=new LoginComponent();
-console.log("LOGIN STEPS LOADED");
+
+
 
 Given("the user is on the login page",async()=>{
-await loginComponent.open();
+await loginComponent.openPage();
 });
 
-When("the user enters valid credentials",async()=>{
-    await loginComponent.login('standard_user','secret_sauce')
+When("th user enters valid credentials",async()=>{
+    await loginComponent.login(users.standard.username,users.standard.password)
 });
 
 When("the user clicks the Login button",async()=>{
@@ -18,5 +19,6 @@ When("the user clicks the Login button",async()=>{
 })
 
 Then('the Swag Labs should be displayed',async()=>{
-    await expect(await loginComponent.getTitle()).toBe('Swag Labs')
+    await expect(await loginComponent.getTitle()).toBe(cart.title)
 })
+
