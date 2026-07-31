@@ -10,7 +10,7 @@ Given("the user is on the login page",async()=>{
 await loginComponent.openPage();
 });
 
-When("th user enters valid credentials",async()=>{
+When("the user enters valid credentials",async()=>{
     await loginComponent.login(users.standard.username,users.standard.password)
 });
 
