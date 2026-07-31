@@ -1,46 +1,40 @@
 
 
-const{loginComponent,shoppingPage,checkoutPage,successPage,fillForm,finishCheckout}=require('../po/index')
+const{loginComponent,shoppingPage,checkoutPage,successPage,fillForm,finishCheckout}=require('../po/index');
+
+const{users,cart,fillFormUser,loginTestData}=require('../data/index')
 
 describe('End-to-end flow',()=>{
 
 it('completes happy path from login to success message',async()=>{
-    //launch url
-    await loginComponent.open();
 
-    //log in with standard_user and secret_sauce password
-    await loginComponent.login('standard_user','secret_sauce');
+    await loginComponent.openPage();
+    await loginComponent.login(users.standard.username,users.standard.password);
     await loginComponent.clickSubmit(); 
-    
-    //tab to have title 'Swag Labs'
-const title=await loginComponent.getTitle();
-    await expect(title).toBe('Swag Labs');
+    const title=await loginComponent.getTitle();
+    await expect(title).toBe(cart.title);
 
-    //for testing we will pass this product
-    const product='Sauce Labs Backpack';
+    
     await expect(shoppingPage.shoppingCartBtn).toBeDisplayed();
-    await shoppingPage.addProductBtn(product).click();
-
+    await shoppingPage.addProductBtn(cart.product).click();
     
-    //Navigate to Cart and validate the item is present.
+    
     await shoppingPage.shoppingCartBtn.click();
-    const chosenProduct=await shoppingPage.productToExistInCart(product);
-    await expect(chosenProduct).toEqual(product);
+    const chosenProduct=await shoppingPage.productToExistInCart(cart.product);
+    await expect(chosenProduct).toEqual(cart.product);
 
-    //Proceed to Checkout
+
     await expect(checkoutPage.checkoutBtn).toBeEnabled();
     await checkoutPage.checkoutBtn.click();
 
-    //Fill in the Information form(First Name,Last Name,Zip
-    await fillForm.fillAndContinue('Marcelo','Chirau','44000');
- 
-    //Complete the checkout and validate the success message:"Thank you for your order!
+
+    await fillForm.fillAndContinue(fillFormUser.username,fillFormUser.lastname,fillFormUser.zip);
     await finishCheckout.finishBtn.click();
-    //plus element existance
+    
+
     await expect(successPage.thankYouMsg).toExist();
     const successMsg=await successPage.thankYouMsg;
     await expect(successMsg).toHaveText("Thank you for your order!");
-
 
 })
 })
@@ -49,30 +43,9 @@ const title=await loginComponent.getTitle();
 
 describe('UC-2 Data Driven Login',()=>{
     beforeEach(async()=>{
-        //launch url
-        await browser.url('/');
+        await loginComponent.openPage();
 
     })
-
-//i create an array of objects that i will loop through it to create 
-// a data-driven pattern:
-const loginTestData=[
-    {
-        description:'It should pass when "standard_user" is logged in',
-        username:'standard_user',
-        password:'secret_sauce',
-        expectedResult:'success',
-        expectedMessage:'Swag Labs'
-    },
-    {
-        description:'should fail if user will try to log in with "locked_out_user"',
-        username:'locked_out_user',
-        password:'secret_sauce',
-        expectedResult:'fail',
-        expectedMessage:'Epic sadface: Sorry, this user has been locked out.'
-    }
-]
-
 
 loginTestData.forEach(({description,username,password,expectedResult,expectedMessage})=>{
 it(description,async()=>{
