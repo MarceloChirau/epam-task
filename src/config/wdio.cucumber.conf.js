@@ -43,5 +43,13 @@ exports.config={
 
     cucumberOpts:{
         require:['./src/step-definitions/**/*.js']
+    },
+    afterScenario:async function(world,result){
+
+        if(!result.passed){
+    
+            await browser.saveScreenshot('./cucumber-screenshots/error.png')
+        }
     }
+
 }

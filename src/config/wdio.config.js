@@ -60,7 +60,13 @@ const {TimelineService}=require('wdio-timeline-reporter/timeline-service')
         ui: 'bdd',
         timeout: 60000
     },
+afterTest:async function(test,context,result){
 
+    if(!result.passed){
+
+        await browser.saveScreenshot('./screenshots/error.png')
+    }
+}
    
 }
 
