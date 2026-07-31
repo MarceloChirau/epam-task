@@ -2,9 +2,12 @@
 
 const{loginComponent,shoppingPage,checkoutPage,successPage,fillForm,finishCheckout}=require('../po/index');
 
-const{users,cart,fillFormUser,loginTestData}=require('../data/index')
+const{users,cart,fillFormUser,loginTestData}=require('../data/index');
 
 describe('End-to-end flow',()=>{
+
+    
+
 
 it('completes happy path from login to success message',async()=>{
 

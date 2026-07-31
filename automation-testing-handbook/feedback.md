@@ -13,7 +13,7 @@
 (there are some points that could be improved across all provided TAF:
 1.the POM should be a bit refactored: added the index.js file for components and page folders, index.js file for all page objects (barrels added)✅
 
-2.the test data should be transferred and imported from the separated file)
+2.the test data should be transferred and imported from the separated file)✅
 
 3.the new instances should not be created into the test.js file where scenarios are placed ✅
 
@@ -23,7 +23,7 @@
 
 6.it's needed to add the artifacts configs for failed scenarios
 
-7.all comments should be either removed or be put into the appropriate place of the code
+7.all comments should be either removed or be put into the appropriate place of the code✅
 
 8.bdd approach✅
 

@@ -1,3 +1,5 @@
 node_modules
 src/outputTest/
 src/allure-results/
+screenshots/
+cucumber-screenshots/
