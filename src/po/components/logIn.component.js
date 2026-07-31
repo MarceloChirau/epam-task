@@ -17,7 +17,7 @@ get submitBtn(){
 get failMsg(){
     return  this.rootEl.$('h3[data-test="error"]');
 }
-  async open(){
+  async openPage(){
     await browser.url('/');
 
   }
