@@ -42,17 +42,25 @@ npm install
 ```
 
 
-### To run the test:
+### To run the Mocha test:
 
 ```bash
-npm test
+npm run mocha
 
 ```
 This command will run both UC-1 and UC-2.
 
 
+### To run cucumber test:
+
+```bash
+npm run cucumber
+
+```
+This test is only for the user login
+
 ###  To generate report:
-You don't need to do anything, report is generated automatically every time you run npm test. Generated reports are stored in `src/outputTest/timeline-report.html` .
+You don't need to do anything, report is generated automatically every time you run npm mocha. Generated reports are stored in `src/outputTest/timeline-report.html` .
 To open the report just double click on *timeline-report.html*
 
 
